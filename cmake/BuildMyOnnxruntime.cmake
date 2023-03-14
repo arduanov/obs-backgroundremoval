@@ -63,7 +63,7 @@ elseif(OS_MACOS)
 else()
   set(PYTHON3 python3)
   set(Onnxruntime_PLATFORM_CONFIGURE "")
-  set(Onnxruntime_PLATFORM_OPTIONS --cmake_generator Ninja)
+  set(Onnxruntime_PLATFORM_OPTIONS --cmake_generator Ninja --use_rocm --rocm_home=/opt/rocm)
 
   if(Onnxruntime_CCACHE_EXE)
     list(APPEND Onnxruntime_PLATFORM_OPTIONS --cmake_extra_defines
@@ -134,6 +134,7 @@ set(Onnxruntime_INCLUDE_PATH
     ${INSTALL_DIR}/include/onnxruntime/core/session
     ${INSTALL_DIR}/include/onnxruntime/core/providers/cpu
     ${INSTALL_DIR}/include/onnxruntime/core/providers/cuda
+    ${INSTALL_DIR}/include/onnxruntime/core/providers/rocm
     ${INSTALL_DIR}/include/onnxruntime/core/providers/coreml
     ${INSTALL_DIR}/include/onnxruntime/core/providers/dml)
 if(OS_MACOS)

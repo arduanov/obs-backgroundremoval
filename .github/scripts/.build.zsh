@@ -220,9 +220,9 @@ Usage: %B${functrace[1]%:*}%b <option> [<options>]
         num_procs=$(( $(sysctl -n hw.ncpu) + 1 ))
         ;;
       linux-*)
-        if (( ${+CI} )) {
-          cmake_args+=(-DCMAKE_INSTALL_PREFIX=/usr -DLINUX_PORTABLE=OFF)
-        }
+#        if (( ${+CI} )) {
+          cmake_args+=(-DCMAKE_INSTALL_PREFIX=/usr -DLINUX_PORTABLE=OFF -DUSE_ROCM=1 -Donnxruntime_USE_ROCM=ON)
+#        }
         num_procs=$(( $(nproc) + 1 ))
         ;;
     }

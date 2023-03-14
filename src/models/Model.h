@@ -12,6 +12,9 @@
 #ifdef WITH_CUDA
 #include <cuda_provider_factory.h>
 #endif
+#ifdef USE_ROCM
+#include <rocm_provider_factory.h>
+#endif
 #ifdef _WIN32
 #ifndef WITH_CUDA
 #include <dml_provider_factory.h>
