@@ -134,6 +134,7 @@ set(Onnxruntime_INCLUDE_PATH
     ${INSTALL_DIR}/include/onnxruntime/core/session
     ${INSTALL_DIR}/include/onnxruntime/core/providers/cpu
     ${INSTALL_DIR}/include/onnxruntime/core/providers/cuda
+    ${INSTALL_DIR}/include/onnxruntime/core/providers/rocm
     ${INSTALL_DIR}/include/onnxruntime/core/providers/coreml
     ${INSTALL_DIR}/include/onnxruntime/core/providers/dml)
 if(OS_MACOS)
